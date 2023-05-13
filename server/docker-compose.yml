@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  app:
+    build: ./
+    expose:
+     - 80
+    restart: always
+    environment:
+      VIRTUAL_HOST: friedbergjon.free-weather.com
+      VIRTUAL_PORT: 5000
+      LETSENCRYPT_HOST:	friedbergjon.free-weather.com
+      LETSENCRYPT_EMAIL: friedberg_jon@hotmail.com
+network:
+  default:
+    external:
+    name: nginx-proxy
