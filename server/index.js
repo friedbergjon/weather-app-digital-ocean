@@ -12,6 +12,17 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+// for heroku only!!
+
+// if (process.env.NODE_ENV === "production"){
+//     app.use(express.static('build'));
+//     app.get('*', (req, res) => {
+//         req.sendFile(path,resolve(__dirname, 'build', 'index.html'))
+//     })
+// }
+
+// -------------------end heroku only script
+
 
 app.listen(port, hostname, ()=>{
     console.log(`The server is running on ${hostname}${port}`)
